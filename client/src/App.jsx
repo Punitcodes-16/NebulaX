@@ -4,7 +4,7 @@ function App() {
 
   const [apods, setApods] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [heroZoom, setHeroZoom] = useState(false);
+  
   const [showRegister, setShowRegister] = useState(false);
 const [name, setName] = useState("");
   const [showFavorites, setShowFavorites] = useState(false);
@@ -102,12 +102,10 @@ const handleLogin = async () => {
 }, []);
 
 const handleHeroClick = () => {
-  setHeroZoom(true);
-
-  setTimeout(() => {
-    window.location.href =
-      "https://eyes.nasa.gov/apps/orrery/#/home";
-  }, 1000);
+  window.open(
+    "https://eyes.nasa.gov/apps/orrery/#/home",
+    "_blank"
+  );
 };
 
 useEffect(() => {
@@ -205,8 +203,7 @@ useEffect(() => {
     
    <h2
   onClick={handleHeroClick}
- className={`text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight cursor-pointer transition-all duration-1000 hover:scale-105 ${
-  heroZoom ? "scale-150 opacity-0 blur-sm" : ""
+ className={`text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight cursor-pointer transition-all duration-1000 hover:scale-105 
 }`}
 >
   ENTER THE COSMOS
