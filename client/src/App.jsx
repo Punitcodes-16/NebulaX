@@ -13,7 +13,7 @@ const fetchFavorites = async () => {
   try {
     console.log("TOKEN:", token);
 
-    const res = await fetch("http://localhost:5000/api/favorites", {
+    const res = await fetch("https://nebulax.onrender.com", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -36,7 +36,7 @@ const fetchFavorites = async () => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/favorites", {
+    const res = await fetch("https://nebulax.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const [token, setToken] = useState(localStorage.getItem("token"));
 
 const handleLogin = async () => {
   try {
-    const res = await fetch("http://localhost:5000/api/login", {
+    const res = await fetch("https://nebulax.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -95,7 +95,7 @@ const handleLogin = async () => {
 };
 
   useEffect(() => {
-  fetch("http://localhost:5000/api/apod")
+  fetch("https://nebulax.onrender.com")
     .then((res) => res.json())
     .then((data) => setApods(data))
     .catch((err) => console.error(err));
@@ -112,7 +112,7 @@ const handleHeroClick = () => {
 
 useEffect(() => {
   const fetchISS = () => {
-    fetch("http://localhost:5000/api/iss")
+    fetch("https://nebulax.onrender.com")
       .then((res) => res.json())
       .then((data) => setIss(data.iss_position))
       .catch((err) => console.error(err));
