@@ -49,11 +49,6 @@ Protected API routes using JWT
 
 ---
 
-## 📸 Preview
-
-![NebulaX Screenshot](./preview.png)
-
----
 
 ## ⚠️ Note
 
